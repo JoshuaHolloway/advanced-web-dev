@@ -6,7 +6,7 @@
 03 - AJAX\
 04 - Jasmine\
 05 - Advanced-Array-Methods\
-06 - Closuers\
+06 - Closures\
 07 - JS-OOP\
 08 - JSON-APIs\
 09 - ES2015\
