@@ -1,6 +1,4 @@
 function sendMessage(message, callback) {
-    alert("Coming from callback");
-
     //callback(message);
 
     // Can also return invocation to assign it
@@ -14,3 +12,6 @@ sendMessage("Message 2", alert)
 
 // assign function invocation to variable
 let answer = sendMessage("Are you sure???", confirm);
+
+// Can we invoke it?
+answer();
