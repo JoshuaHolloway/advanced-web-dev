@@ -1,0 +1,33 @@
+<html>
+
+<head></head>
+
+<body>
+    <img id="image" src="" alt="">
+    <script>
+        console.log('about to fetch image');
+
+        // fetch image, then convert to image-blob
+        fetch('lena.png')
+            .then(response => {
+                console.log(response);
+
+                // convert image into an image blob
+                return response.blob();
+            })
+            .then(response => {
+                console.log(response);
+
+                // -Take image blob and convet it into form that
+                //  an HTML-DOM-element expects:
+                const blob = URL.createObjectURL(response);
+
+                // Place blob in src attribute of #image element
+                document.getElementById('image').src = blob;
+            });
+
+
+    </script>
+</body>
+
+</html>
