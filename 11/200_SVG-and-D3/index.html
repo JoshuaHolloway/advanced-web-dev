@@ -18,8 +18,11 @@
 
     const width = 600;
     const height = 600;
-    const barWidth = 25;
+    
     const barPadding = 10;
+
+    const numBars = 12;
+    const barWidth = width / numBars - barPadding;
 
     d3.select('input')
         .property('min', minYear)
@@ -36,8 +39,12 @@
       .enter()
       .append('rect')
         .attr('width', barWidth)
-        .attr('height', height)
-        .attr('y', 0)
+        .attr('height', d => {
+          return d.births / 2.5e6 * height;
+        })
+        .attr('y', d => {
+          return height - d.births / 2.25e6 * height;
+        })
         .attr('x', (d,i) => {
           return (barWidth + barPadding) * i;
         })
