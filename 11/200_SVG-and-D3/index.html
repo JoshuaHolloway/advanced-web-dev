@@ -49,6 +49,21 @@
           return (barWidth + barPadding) * i;
         })
         .attr('fill', 'purple');
+
+      d3.select('input')
+        .on('input', () => {
+          const year = +d3.event.target.value;
+          d3.selectAll('rect')
+            .data(birthData.filter(d => {
+              return d.year === year;
+            }))
+              .attr('height', d => {
+                return d.births / 2.5e6 * height;
+              })
+              .attr('y', d => {
+                return height - d.births / 2.5e6 * height;
+              });
+        });
   </script>
 </body>
 </html>
