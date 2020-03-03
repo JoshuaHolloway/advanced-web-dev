@@ -11,9 +11,15 @@
   <input type="range" step="1">
   <script src="https://d3js.org/d3.v4.js"></script>
   <script src="birthData.js"></script>
-  <script src="app.js"></script>
+  <!-- <script src="app.js"></script> -->
   <script>
-    
+    const minYear = birthData[0].year;
+    const maxYear = birthData[birthData.length - 1].year;
+
+    d3.select('input')
+      .property('min', minYear)
+      .property('max', maxYear)
+      .property('value', minYear);
   </script>
 </body>
 </html>
