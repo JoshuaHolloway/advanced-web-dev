@@ -35,12 +35,26 @@
 * 09 - ES2015
 * 10 - ES2016-ES2017
 * 11 - D3
-    * 000: D3 Selections
+    * 0xx: D3 and DOM
+        * 000: D3 Selections
 
-    ********************
-    * 001: Selections and Callbacks
-    ********************
+        ********************
+        * 001: Selections and Callbacks
+        ********************
 
-    * 200: Intro to SVG and D3
+    * 1xx: Data Joins and Update Paterns in D3
+
+    * 2xx: SVG and D3
+        * Intro to SVG
+        * Rectangles, Polygons, and Cirgles in SVG
+        * Text elements in SVG
+        * Path elements in SVG
+        * SVG flags
+    
+    * 300: Intro to SVG and D3
+    * 4xx: Intermediate D3
+    * 5xx: Odds and Ends, and Advanced Graph Types
+
+    * 6xx: Applying D3: Data Dashboard
 * 12 - GreenSock
 * 20 - Random
