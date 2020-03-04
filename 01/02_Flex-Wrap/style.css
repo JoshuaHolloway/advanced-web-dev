@@ -11,11 +11,11 @@
 
     /* 02 */
     /* flex-wrap: nowrap; */  /* default */
-    /* flex-wrap: wrap; */
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
+    /* flex-wrap: wrap-reverse; */
 
     /* Can use flex direction in combination */
-    flex-direction: row-reverse;
+    /* flex-direction: row-reverse; */
 
 }
 
