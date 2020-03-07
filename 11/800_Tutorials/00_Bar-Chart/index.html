@@ -1,0 +1,36 @@
+<html>
+    <head></head>
+    <body>
+        
+        <div id="div-1"></div>
+        <div id="div-2"></div>
+
+        <ul>
+            <li>1</li>
+            <li>2</li>
+        </ul>
+
+        <table></table>
+
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <script>
+            const data = [4, 8, 15, 16, 23, 42];
+
+            const div = document.getElementById('div-1');
+            div.innerHTML = 'Hello, world!';
+
+            const div_d3 = d3.selectAll('#div-2');
+            div_d3.html('Hello, from D3!');
+
+            const p = d3.selectAll('li');
+            p.style('color', 'red');
+
+            const table = d3.selectAll("table");
+            const tbody = table.append("tbody");
+            tbody.append("tr").append("td").text("First!");
+            tbody.append("tr").append("td").text("Second.");
+            tbody.append("tr").append("td").text("Third.");
+
+        </script>
+    </body>
+</html>
