@@ -21,3 +21,13 @@ d3.selectAll('li')
     .style('background-color', (_, idx) => {
         return idx % 2 === 0 ? 'lightgrey' : 'blue';
     });
+
+// 2-spaces represent callback that returns current selection
+// 4-spaces represent callbacks that return a new selection
+d3.select('.outer')
+    .style('color', 'purple')
+  .select('div')
+    .style('font-size', '30px')
+    .style('background-color', 'orange')
+  .select('div')
+    .style('border', '8px solid blue');
