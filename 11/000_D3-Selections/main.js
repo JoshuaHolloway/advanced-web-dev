@@ -3,11 +3,11 @@
 // console.log(d3.version);
 
 // Select single element:
-console.log(d3.select('#page-title'));
+//console.log(d3.select('#page-title'));
 // Returned as single element array-object
 
 // Select multiple elements:
-console.log(d3.selectAll('li'));
+//console.log(d3.selectAll('li'));
 // Returned as node-list
 
 // Extract the nodes from the node-list:
@@ -15,7 +15,7 @@ console.log(d3.selectAll('li').nodes());
 // Returns an array
 
 // Extract the first node-element
-console.log(d3.selectAll('li').node());
+//console.log(d3.selectAll('li').node());
 
 // Change the CSS-style on the element
 d3.select('#page-title').style('background-color', '#00feab');
@@ -31,7 +31,11 @@ d3.select('#page-title').style('background-color', '#000000').style('color', '#f
 //      selection.text([newValue])
 //      selection.html([newValue])
 // -D3 methods work as getters if no newValue is passed in.
-console.log(d3.select('#page-title').text());
+//console.log(d3.select('#page-title').text());
 
 //      selection.classed(classList[,shouldClassesBeSet])
 //  -When working with classes we use classed()
+//  -arg1: Space-seperated list of class names we want to set
+//  -arg2: Value
+//      --If value is truthy, those classes with be set on the selection
+//        ----else, they will be removed.
