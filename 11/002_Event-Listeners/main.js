@@ -26,4 +26,5 @@ d3.select('#new-note').on('submit', () => {
     .append('p')
       .classed('note', true)
       .text(input.property('value'));
+  input.property('value','');
 });
