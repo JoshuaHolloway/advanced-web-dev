@@ -53,7 +53,6 @@
         * Path elements in SVG
         * SVG flags
     
-    * 300: Intro to SVG and D3
     * 4xx: Intermediate D3
     * 5xx: Odds and Ends, and Advanced Graph Types
 
