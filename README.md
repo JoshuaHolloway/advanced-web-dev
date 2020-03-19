@@ -17,6 +17,8 @@
         * 102: Fetch error handling
         * 103: Fetch project
 
+        * 700: APIs
+
     * jQuery AJAX:
         * 200: 
 
@@ -37,16 +39,14 @@
 * 11 - D3
     * 0xx: D3 and DOM
         * 000: D3 Selections
-
-        ********************
         * 001: Selections and Callbacks
-        ********************
-
+        * 002: Event Listeners
     * 1xx: Data Joins and Update Paterns in D3
+        * 100: Basic Data Joins and Enter Selections
 
     * 2xx: SVG and D3
         * Intro to SVG
-        * Rectangles, Polygons, and Cirgles in SVG
+        * Rectangles, Polygons, and Circles in SVG
         * Text elements in SVG
         * Path elements in SVG
         * SVG flags
