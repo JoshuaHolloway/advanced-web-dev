@@ -42,6 +42,9 @@ d3.select("svg")
     })
     .attr("fill", "purple");
 
+
+const ms = 500;
+
 d3.select("input")
     .on("input", function() {
       var year = +d3.event.target.value;
@@ -49,6 +52,9 @@ d3.select("input")
         .data(birthData.filter(function(d) {
           return d.year === year;
         }))
+
+        .transition().duration(ms)
+
           .attr("height", function(d) {
             return height - yScale(d.births);
           })
