@@ -44,6 +44,7 @@
     * 1xx: Data Joins and Update Paterns in D3
         * 100: Basic Data Joins and Enter Selections
         * 101: Exit Selections and Key Functions
+        * 102: General Update Pattern
 
     * 2xx: SVG and D3
         * Intro to SVG
