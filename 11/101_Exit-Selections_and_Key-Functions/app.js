@@ -75,4 +75,8 @@ d3.selectAll('li')
   .remove();
 
 // Check out the binded-data:
-d3.selectAll('li').data()
+d3.selectAll('li').data();
+
+// The key function is passed in as the second arguement to .data() method
+// -It specifies how data and elements together
+
