@@ -1,101 +1,58 @@
-<html>
-    <head>
-        <script src="https://d3js.org/d3.v4.js"></script>
-    </head>
-    <body>
-        
-        <div id="div-1"></div>
-        <div id="div-2"></div>
-
-        <ul>
-            <li>1</li>
-            <li>2</li>
-        </ul>
-
-        <table></table>
-       
-        <script>
-            const div = document.getElementById('div-1');
-            div.innerHTML = 'Hello, world!';
-
-            const div_d3 = d3.selectAll('#div-2');
-            div_d3.html('Hello, from D3!');
-
-            const p = d3.selectAll('li');
-            p.style('color', 'red');
-
-            const table = d3.selectAll("table");
-            const tbody = table.append("tbody");
-            tbody.append("tr").append("td").text("First!");
-            tbody.append("tr").append("td").text("Second.");
-            tbody.append("tr").append("td").text("Third.");
-        </script>
-
-
-        <ul id="x"></ul>
-        <script>
-
-            const test_data = [
-                {
-                    name: 'a',
-                    age: 'b'
-                },
-                {
-                    name: 'c',
-                    age: 'd'
-                }
-            ];
-
-            // console.log(d3.select('#x').selectAll('li'));
-            console.log(d3.select('#x').selectAll('li').data(test_data));
-
-            // -.enter() creates a d3-selection with the enter-nodes from __data__ property
-            // -.append('li') places these nodes into the DOM
-            // -.text(()=>{return d.j}) sets the text of each list-item with a callback function
-            d3.select('#x').selectAll('li').data(test_data).enter().append('li')
-                .text(function(d) {
-                    console.log(d);
-                    return d.name;
-                });
-            // Use the data returned from the callback to set the inner-text of the li-element.
-            // d3 callback functions:
-            // -Arg-1: Data bound to current DOM-element by d3
-            // -Arg-2: Index of the current element in the selection.
-
-        </script>
-
-
-        <!-- ---------------------------------------- -->
-        <!-- --------------Bar Chart----------------- -->
-        <!-- ---------------------------------------- -->
-        <!-- Hard-Coded Bar-Chart via HTML/CSS -->
-        <div style="font: 10px sans-serif; text-align: right; color: white;">
-            <div style="background: steelblue; padding: 3px; margin: 1px; width: 40px;">4</div>
-            <div style="background: steelblue; padding: 3px; margin: 1px; width: 80px;">8</div>
-            <div style="background: steelblue; padding: 3px; margin: 1px; width: 150px;">15</div>
-            <div style="background: steelblue; padding: 3px; margin: 1px; width: 160px;">16</div>
-            <div style="background: steelblue; padding: 3px; margin: 1px; width: 230px;">23</div>
-            <div style="background: steelblue; padding: 3px; margin: 1px; width: 420px;">42</div>
-        </div>
-
-        <!-- Same Bar-Chart via D3 -->
-        <div id="d3-BarChart" style="font: 10px sans-serif; "></div>
-        <script>
-            const data = [4, 8, 15, 16, 23, 42];
-            const d3_BarChart = d3.selectAll("#d3-BarChart")
-                // .style("font", "")
-                // .style("text-align", "right")
-                // .style("color", "white");
-
-            //d3_BarChart.data
-                // .data(data)
-                // .join("div")
-                // .style("background", "steelblue")
-                // .style("padding", "3px")
-                // .style("margin", "1px")
-                // .style("width", d => `${d * 10}px`)
-                // .text(d => d);
-
-        </script>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>D3 Final Project</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="nav">
+    <h2>CO<sub>2</sub> Dashboard</h2>
+    <p>
+      Explore CO<sub>2</sub> emissions by year. 
+      Current year: <span id="year-val"></span>
+      <input id="year" type="range" step="1">
+    </p>
+    <p>
+      Choose between total emissions or emissions per capita.
+      <input type="radio" name="data-type" value="emissions" checked>
+      <label>Emissions</label>
+      <input type="radio" name="data-type" value="emissionsPerCapita">
+      <label>Emissions Per Capita</label>
+    </p>
+    <p>Click on a country to see its trends by year.</p>
+  </div>
+  <section class="container">
+    <div class="chart-container">
+    <svg 
+      version="1.1"
+      baseProfile="full"
+      xmlns="http://www.w3.org/2000/svg" 
+      id="map">
+    </svg>
+  </div>
+  <div class="chart-container right">
+    <svg 
+      version="1.1"
+      baseProfile="full"
+      xmlns="http://www.w3.org/2000/svg" 
+      id="pie">
+    </svg>
+    <svg 
+      version="1.1"
+      baseProfile="full"
+      xmlns="http://www.w3.org/2000/svg" 
+      id="bar">
+    </svg>
+  </div>
+  </section>
+  <div class="tooltip"></div>
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://unpkg.com/topojson@3"></script>
+  <script src="pie.js"></script>
+  <script src="bar.js"></script>
+  <script src="map.js"></script>
+  <script src="app.js"></script>
+</body>
 </html>
