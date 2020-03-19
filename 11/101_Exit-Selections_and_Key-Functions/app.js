@@ -60,3 +60,19 @@ d3.selectAll('li')
   .data(quotes)
   .exit()
   .remove();
+
+
+// Next, lets remove all quotes from R-rated movies
+
+// Update array and filter out any movie with R-rating
+const non_R_Quotes = quotes.filter((movie) => movie.rating !== 'R');
+console.log(non_R_Quotes);
+
+// Attempt to update DOM with filtered array
+d3.selectAll('li')
+  .data(non_R_Quotes)
+  .exit()
+  .remove();
+
+// Check out the binded-data:
+d3.selectAll('li').data()
