@@ -43,7 +43,8 @@ d3.select("svg")
     .attr("fill", "purple");
 
 
-const ms = 500;
+const ms = 2e3;
+const delay_ms = 50;
 
 d3.select("input")
     .on("input", function() {
@@ -53,7 +54,13 @@ d3.select("input")
           return d.year === year;
         }))
 
-        .transition().duration(ms)
+        // Transitions:
+        .transition()
+        .duration(ms)
+        .ease(d3.easeCubic) // default
+        //.ease(d3.easeLinear)
+        .delay((d,i) => i * delay_ms)
+
 
           .attr("height", function(d) {
             return height - yScale(d.births);
