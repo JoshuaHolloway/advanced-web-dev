@@ -43,6 +43,16 @@ d3.select("svg")
     .attr("fill", "purple");
 
 
+// Title to specify year
+d3.select('svg')
+  .append('text')
+  .classed('title', true)
+  .text('Birth Data in ' + minYear)
+  .attr('x', width / 2)
+  .attr('y', 30)
+  .style('text-anchor', 'middle')
+  .style('font-size', '2em')
+
 const ms = 2e3;
 const delay_ms = 50;
 
@@ -60,6 +70,18 @@ d3.select("input")
         .ease(d3.easeCubic) // default
         //.ease(d3.easeLinear)
         .delay((d,i) => i * delay_ms)
+        .on('start', (d, i) => {
+
+          // Only listen for start event on first rectangle
+          if (i === 0) {
+            d3.select('.title')
+              .text('Updating to ' + year + ' data...')
+          }
+        })
+        .on('end', () => {
+          d3.select('.title')
+            .text('Birth Data in ' + year)
+        })
 
 
           .attr("height", function(d) {
