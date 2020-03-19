@@ -47,14 +47,19 @@
         * 102: General Update Pattern
 
     * 2xx: SVG and D3
-        * Intro to SVG
-        * Rectangles, Polygons, and Circles in SVG
-        * Text elements in SVG
-        * Path elements in SVG
-        * SVG flags
+        * 200: Intro to SVG
+        * 201: Rectangles, Polygons, and Circles in SVG
+        * 202: Text elements in SVG
+        * 203: Path elements in SVG
+        * 204: SVG flags
     
-    * 4xx: Intermediate D3
-    * 5xx: Odds and Ends, and Advanced Graph Types
+    * 3xx: Intermediate D3
+        ************************
+        * 300: Extrema and Scales
+        * 301: Scatterplots
+        ************************
+
+    * 4xx: Odds and Ends, and Advanced Graph Types
 
     * 6xx: Applying D3: Data Dashboard
 * 12 - GreenSock
