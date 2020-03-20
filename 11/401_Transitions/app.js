@@ -71,6 +71,8 @@ d3.select("input")
         //.ease(d3.easeLinear)
         .delay((d,i) => i * delay_ms)
         .on('start', (d, i) => {
+
+          
           // Only listen for start event on first rectangle
           if (i === 0) {
             d3.select('.title')
