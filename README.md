@@ -45,19 +45,21 @@
         * 100: Basic Data Joins and Enter Selections
         * 101: Exit Selections and Key Functions
         * 102: General Update Pattern
-
     * 2xx: SVG and D3
         * 200: Intro to SVG
         * 201: Rectangles, Polygons, and Circles in SVG
         * 202: Text elements in SVG
         * 203: Path elements in SVG
-        * 204: SVG flags
-    
+        * 204: SVG flags  
     * 3xx: Intermediate D3
-        ************************
         * 300: Extrema and Scales
         * 301: Scatterplots
-        ************************
+    * 4xx: Advanced Graph Types
+        * 400: Tooltips
+        ******************
+        * 401: Transitions
+        ******************
+    
 
     * 4xx: Odds and Ends, and Advanced Graph Types
 
