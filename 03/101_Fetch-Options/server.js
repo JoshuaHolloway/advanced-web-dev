@@ -15,14 +15,25 @@ const fake_db = {
     obj2: {prop1: 'val-a', prop2: 'val-b'}
 };
 //=======================================
+// To access the body of the post-request
+const body_parser = require('body-parser'); 
+// app.use(body_parser.urlencoded({ extended: true }));
+app.use(body_parser.json());
+//=======================================
+// app.post('/josh/:id', (req, res) => {
+//     console.log('req.params');
+//     console.log(req.params);
+// });
+//=======================================
 app.post('/josh', (req, res) => {
-    console.log(req);
+    console.log('req.body');
+    console.log(req.body);
 });
 //=======================================
-app.get('/josh', (req, res) => {
-    console.log('/josh');
-    res.send({josh: 'josh!!!'});
-});
+// app.get('/josh', (req, res) => {
+//     console.log('/josh');
+//     res.send({josh: 'josh!!!'});
+// });
 //=======================================
 app.get('/', (req, res) => {
     res.render('index.ejs', {});
