@@ -1,0 +1,63 @@
+<html>
+
+    <head></head>
+
+    <body>
+        <h1>JOSH</h1>
+
+        <style>
+            #square {
+                height: 100px;
+                width: 100px;
+                background-color: red;
+            }
+        </style>
+        <div id="square">GET: /josh</div>
+        <script>
+            const square = document.querySelector('#square');
+            square.addEventListener('click', () => {
+                console.log('Square Pressed');
+
+                const url = '/josh';
+                fetch(url)
+                    .then(response => {
+                        console.log(response)
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log(data);
+                    });
+            });
+        </script>
+
+
+        <style>
+            #post {
+                height: 100px;
+                width: 100px;
+                background-color: blue;
+            }
+        </style>
+        <div id="post">POST: /josh</div>
+        <script>
+            const post = document.querySelector('#post');
+            post.addEventListener('click', () => {
+                console.log('post clicked');
+
+                // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Supplying_request_options
+                fetch('/josh', {
+                    method: 'POST',
+                    body: JSON.stringify({josh: 'From Client!'})
+                })
+                    .then(response => {
+                        console.log(response);
+                        return response.json();
+                    })
+                    .then(data => console.log(data));
+            });
+
+        </script>
+
+    </body>
+
+</html>
